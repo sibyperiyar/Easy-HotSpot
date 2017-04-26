@@ -1,0 +1,168 @@
+.custom-modal {
+    display: none;
+    position: fixed;
+    z-index: 1053;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.5);
+}
+
+.cmodal-content {
+    position: relative;
+    margin: 10% auto;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation: cmodalmove .4s ;
+    -o-animation: cmodalmove .4s;
+    -moz-animation: cmodalmove .4s;
+    animation: cmodalmove .4s;
+}
+
+@-webkit-keyframes cmodalmove {
+    0%   {top:-400px;}
+    100% {top:0px;}
+}
+
+@keyframes cmodalmove {
+    0%   {top:-400px;}
+    100% {top:0px;}
+}
+
+.cmodal-header {
+    display: block;
+    height: fit-content;
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.25);
+    color: white;
+    padding: -30px;
+}
+
+.cmodal-title {
+    font-size: 1.08em;
+    display: inline;
+    padding: 10px;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cmodal-close:hover {
+    background-color: orangered;
+}
+
+.cmodal-close {
+    float: right;
+    height: 100%;
+    border-color: rgba(0,0,0,0);
+    border-radius: 5px 5px 0px 5px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: none;
+    background: lightgrey;
+    cursor: pointer;
+}
+
+.cmodal-body {
+    display: inline;
+}
+
+.cmodal-message {
+    display: block;
+    padding: 20px 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cmodal-icon {
+    float: right;
+}
+
+.cmodal-footer {
+    display: block;
+    z-index: -1;
+    border-radius: 0px 0px 10px 10px;
+    background-color: rgb(255,255,255);
+    background-color: rgba(255,255,255,.4);
+    text-align: right;
+}
+
+.cmodal-button {
+    display: inline;
+    margin: 3px 3px;
+    padding: 3px;
+    color: white;
+    min-width: 70px;
+    cursor: pointer;
+    border-radius: 6px;
+    border-color: black;
+    border-color: rgba(0,0,0,0);
+    -webkit-transition: all .2s; 
+    -moz-transition: all .2s; 
+    transition: all .2s;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+.cmodal-button:hover {
+    opacity: .95;
+    box-shadow: 2px 2px 1px black;
+}
+
+.cmodal-ok {
+    background: green;
+    background:  linear-gradient( green, mediumseagreen);
+}
+
+.cmodal-cancel { 
+    background: red;
+    background: linear-gradient( red, indianred);
+}
+
+.cmodal-generic { 
+    background: purple;
+    background: linear-gradient( purple, mediumpurple);
+}
+
+.cmodal-blue {
+    background-color: skyblue;
+    background: linear-gradient( dodgerblue, deepskyblue);
+}
+
+.error {
+    background: red;
+	background: -moz-linear-gradient(red, indianred);
+	background: -webkit-linear-gradient(red, indianred);
+	background: -o-linear-gradient(red, indianred);
+    background: linear-gradient(red, indianred);
+}
+
+.information {
+    background: dodgerblue;
+	background: -moz-linear-gradient(dodgerblue, lightblue);
+	background: -webkit-linear-gradient(dodgerblue, lightblue);
+	background: -o-linear-gradient(dodgerblue, lightblue);
+    background: linear-gradient(dodgerblue, lightblue);
+}
+
+.success {
+    background: green;
+	background: -moz-linear-gradient(green, mediumseagreen);
+	background: -webkit-linear-gradient(green, mediumseagreen);
+	background: -o-linear-gradient(green, mediumseagreen);
+    background: linear-gradient(green, mediumseagreen);
+}
+
+.warning {
+    background: darkorange;
+	background: -moz-linear-gradient(orangered, darkorange);
+	background: -webkit-linear-gradient(orangered, darkorange);
+	background: -o-linear-gradient(orangered, darkorange);
+    background: linear-gradient(orangered, darkorange);
+}
