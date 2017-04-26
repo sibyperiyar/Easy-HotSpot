@@ -41,5 +41,32 @@ For more details of the opetations and features of the utility please refer the 
 -------------------------------------------------
 Major features:
 
-Creation of vouchers for Single person.
+Creation of vouchers for Single person. (Guest User Accounts/Hotspot users)
 Creation of vouchers for Multiple persons.
+Listing Active Users
+Listing inactive Users
+Remove Selected/All User Accounts
+Remove all validity expired User Accounts
+Server Log of Recent Activities
+Removal of uninitiated guest accounts.  Accounts created earlier but no one has started using it yet.
+Voucher Management and Printing.  6 Different Voucher modes are available for Printing vouchers satisfying the needs of all.
+Management of System user Accounts by Admin: Creation, Listing, Activation/Deactivation, Updating details and deletion of System users.
+Hotspot User Profiles Management:  Creation/Updation of User profiles in the router. Options like Session Timeout, MAC Cookie Timeout, Keepalive Timeout, Download and Upload Speed Limits, Number of simultaneous user logins allowed per user account etc can be set for each profile.
+Re-printing of Last Voucher/Vouchers List.
+and many more...
+Please visit hotspot.helloperiyar.com for a detailed visual documentation of the project.
+-------------------------------------------------
+How to Install in different OS based PCs
+Linux / Unix variations
+................
+..................
+Windows Based PCs
+................
+..................
+MAC OSX based MACs
+................
+..................
+................
+..................
+
+
