@@ -17,7 +17,7 @@ http://pear2.php.net/support/
 Developed by: Siby P Varkey, sibyperiyar@gmail.com
 Assistance: Sonal Siby, sonalsiby@gmail.com
 -------------------------------------------------
-Visual Documentation at : hotspot.helloperiyar.com
+Visual Documentation at : http://hotspot.helloperiyar.com
 -------------------------------------------------
 Software and Hardware
 
@@ -37,7 +37,7 @@ Any number of users can be created by the system Admin.  There are 3 levels of s
 
 -------------------------------------------------
 Documentation and Help
-For more details of the opetations and features of the utility please refer the visual documentation available at hotspot.helloperiyar.com
+For more details of the opetations and features of the utility please refer the visual documentation available at http://hotspot.helloperiyar.com
 -------------------------------------------------
 Major features:
 
@@ -54,7 +54,7 @@ Management of System user Accounts by Admin: Creation, Listing, Activation/Deact
 Hotspot User Profiles Management:  Creation/Updation of User profiles in the router. Options like Session Timeout, MAC Cookie Timeout, Keepalive Timeout, Download and Upload Speed Limits, Number of simultaneous user logins allowed per user account etc can be set for each profile.
 Re-printing of Last Voucher/Vouchers List.
 and many more...
-Please visit hotspot.helloperiyar.com for a detailed visual documentation of the project.
+Please visit http://hotspot.helloperiyar.com for a detailed visual documentation of the project.
 -------------------------------------------------
 How to Install in different OS based PCs
 Linux / Unix variations
