@@ -1,5 +1,10 @@
 <?php
-require_once 'settings.php';
+//require_once 'settings.php';
+
+use PEAR2\Net\RouterOS;
+require_once 'PEAR2/Autoload.php';
+require_once 'config.php';
+$util = new RouterOS\Util($client = new RouterOS\Client("$host", "$user", "$pass"));
 
 if (isset($_GET['name'])) $username = $_GET['name'];
 if (isset($_GET['psd'])) $password = $_GET['psd'];

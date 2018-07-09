@@ -14,7 +14,7 @@
 			$DB_con->query("use $dbname");
 		}
 		catch(PDOException $e) {
-			echo "Error Creating/Locating Database $dbname: " . $e->getMessage();
+			echo "Error: " . $e->getMessage();
 	}
 	
 	/* Old Version, NOT creating DB if NOT Exist

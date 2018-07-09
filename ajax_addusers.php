@@ -1,6 +1,11 @@
 <?php  error_reporting(E_ALL);
 ini_set('display_errors', 1);
-require_once 'settings.php';
+
+//require_once 'settings.php';
+use PEAR2\Net\RouterOS;
+require_once 'PEAR2/Autoload.php';
+require_once 'config.php';
+$util = new RouterOS\Util($client = new RouterOS\Client("$host", "$user", "$pass"));
 
 if (isset($_GET['no_of_users'])) $no_of_users = $_GET['no_of_users'];
 if (isset($_GET['pass_length'])) $passLength = $_GET['pass_length'];

@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Easy HotSpot - A Simple Hotspot user management utility based on PEAR2 PHP API Client, for Mikrotik RouterOS based router devices by Team Zetozone">
+    <meta name="description" content="Easy HotSpot - A Simple Hotspot user management utility by Team Zetozone">
     <meta name="author" content="Siby P Varkey, Team Zetozone">
 <!--	
 	<meta http-equiv='cache-control' content='no-cache'>
