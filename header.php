@@ -106,6 +106,7 @@ function ajaxMultiple(){
    var limit_bytes = document.getElementById('limit_bytes').value;
    var profile = document.getElementById('profile').value;
    var same_pass = document.getElementById('same_pass').value;
+   var Pass_type = document.getElementById('pass_type').value;
 
 //   btns = [{text:"No",action:"cmodalClose",style:"cmodal-cancel"}, {text:"Yes",action:"test.php",style:"cmodal-ok"}];
    
@@ -149,7 +150,9 @@ function ajaxMultiple(){
 	  }
   
    var queryString = "?no_of_users=" + no_of_users ;
-   queryString +=  "&pass_length=" + pass_length + "&user_prefix=" + user_prefix + "&limit_uptime=" + limit_uptime + "&profile=" + profile + "&same_pass=" + same_pass +  "&limit_bytes=" + limit_bytes;
+   queryString +=  "&pass_length=" + pass_length + "&user_prefix=" + user_prefix ;
+   queryString += "&limit_uptime=" + limit_uptime + "&profile=" + profile + "&same_pass=" + same_pass;
+   queryString += "&limit_bytes=" + limit_bytes + "&pass_type=" + Pass_type;
    ajaxRequest.open("GET", "ajax_addusers.php" + queryString, true);
    ajaxRequest.send(null);
 }
@@ -675,7 +678,7 @@ $('#getProfileModal').on('show.bs.modal', function (event)   {
                 dataType: "json",
                 success: function(data) 
                 {
-					//console.log (data);
+					//console.log(data);
                     var Name = data.name;  
 					var Address_pool = data.address_pool;					
                     var Rate_limit = data.rate_limit;
@@ -689,6 +692,12 @@ $('#getProfileModal').on('show.bs.modal', function (event)   {
                     var Mac_cookie_timeout = data.mac_cookie_timeout;
 					var Keepalive_timeout = data.keepalive_timeout;
 					
+					var Validity = data.validity;
+					var Grace_period = data.grace_period;
+					var On_expiry = data.on_expiry;
+					var Price = data.price;
+					var Lock_user = data.lock_user;
+					
 					modal.find('.modal-body #profile_name').val(Name)
 					modal.find('.modal-body #address_pool').val(Address_pool)
 					modal.find('.modal-body #rx_rate_limit').val(Rx_rate_limit)
@@ -697,10 +706,14 @@ $('#getProfileModal').on('show.bs.modal', function (event)   {
 					modal.find('.modal-body #shared_users').val(Shared_users)
 					modal.find('.modal-body #mac_cookie_timeout').val(Mac_cookie_timeout)
 					modal.find('.modal-body #keepalive_timeout').val(Keepalive_timeout)
-					
+
+					modal.find('.modal-body #validity').val(Validity)
+					modal.find('.modal-body #grace_period').val(Grace_period)
+					modal.find('.modal-body #on_expiry').val(On_expiry)					
+					modal.find('.modal-body #price').val(Price)
+					modal.find('.modal-body #lock_user').val(Lock_user)
                 }
             })
- 
         })
     } )    
     
@@ -720,6 +733,12 @@ function addprofile(oForm) {
 	var Shared_users = oForm.elements["shared_users"].value;
 	var Mac_cookie_timeout = oForm.elements["mac_cookie_timeout"].value;
 	var Keepalive_timeout = oForm.elements["keepalive_timeout"].value;
+	
+	var Validity = oForm.elements["validity"].value;
+	var Grace_period = oForm.elements["grace_period"].value;
+	var On_expiry = oForm.elements["on_expiry"].value;
+	var Price = oForm.elements["price"].value;
+	var Lock_user = oForm.elements["lock_user"].value;
 	
    var ajaxRequest;  // The variable that makes Ajax possible!
    try{
@@ -765,6 +784,8 @@ function addprofile(oForm) {
 	queryString += "&session_timeout=" + Session_timeout;
 	queryString +=  "&shared_users=" + Shared_users + "&mac_cookie_timeout=" + Mac_cookie_timeout + "&keepalive_timeout=" + Keepalive_timeout;
 	queryString += "&rx_rate_limit=" + Rx_rate_limit + "&tx_rate_limit=" + Tx_rate_limit;
+	queryString += "&validity=" + Validity + "&grace_period=" + Grace_period;
+	queryString += "&on_expiry=" + On_expiry + "&price=" + Price + "&lock_user=" + Lock_user;
 	ajaxRequest.open("GET", "ajax_add_profile.php" + queryString, true);
 	ajaxRequest.send(null);
    
@@ -838,6 +859,12 @@ function editprofile(oForm) {
 	var Mac_cookie_timeout = oForm.elements["mac_cookie_timeout"].value;
 	var Keepalive_timeout = oForm.elements["keepalive_timeout"].value;
 	
+	var Validity = oForm.elements["validity"].value;
+	var Grace_period = oForm.elements["grace_period"].value;
+	var On_expiry = oForm.elements["on_expiry"].value;
+	var Price = oForm.elements["price"].value;
+	var Lock_user = oForm.elements["lock_user"].value;
+	
    var ajaxRequest;  // The variable that makes Ajax possible!
    try{
    
@@ -882,6 +909,8 @@ function editprofile(oForm) {
 	queryString += "&session_timeout=" + Session_timeout;
 	queryString +=  "&shared_users=" + Shared_users + "&mac_cookie_timeout=" + Mac_cookie_timeout + "&keepalive_timeout=" + Keepalive_timeout;
 	queryString += "&rx_rate_limit=" + Rx_rate_limit + "&tx_rate_limit=" + Tx_rate_limit;
+	queryString += "&validity=" + Validity + "&grace_period=" + Grace_period;
+	queryString += "&on_expiry=" + On_expiry + "&price=" + Price + "&lock_user=" + Lock_user;
 	ajaxRequest.open("GET", "ajax_edit_profile.php" + queryString, true);
 	ajaxRequest.send(null);
    

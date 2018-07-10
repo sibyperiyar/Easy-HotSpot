@@ -14,9 +14,36 @@ if (isset($_GET['limit_uptime'])) $limit_uptime = $_GET['limit_uptime'];
 if (isset($_GET['limit_bytes'])) $limit_bytes = $_GET['limit_bytes'];
 if (isset($_GET['profile'])) $profile = $_GET['profile'];
 if (isset($_GET['same_pass'])) $same_pass = $_GET['same_pass'];
+if (isset($_GET['pass_type'])) $pass_type = $_GET['pass_type'];
 
 if ( !isset($_SESSION) ) session_start();
 
+switch ($pass_type) {
+	case "s":
+		$passAlphabet = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz";
+		break;
+	case "c":
+		$passAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		break;
+	case "n":
+		$passAlphabet = "123456789123456789123456789123456789123456789123456789";
+		break;
+	case "sc":
+		$passAlphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		break;
+	case "sn":
+		$passAlphabet = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz123456789123456789123456789";
+		break;
+	case "cn":
+		$passAlphabet = "123456789123456789123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789123456789123456789";
+		break;
+	case "scn":
+		$passAlphabet = "abcdefghijklmnopqrstuvwxyz123456789123456789123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
+		break;
+}
+
+$passAlphabetLimit = strlen($passAlphabet)-1;
+	
 if($_SESSION['user_level'] >= 1 and $_SESSION['user_level'] <= 3) {
 	include('dbconfig.php');
 	$stmt = $DB_con->prepare("SELECT booking_id from hotspot_vouchers ORDER BY booking_id DESC LIMIT 1");
@@ -35,22 +62,28 @@ if($_SESSION['user_level'] >= 1 and $_SESSION['user_level'] <= 3) {
 		
 	$k = 1;
 	for($i=0; $i < $no_of_users; $i++){
-		$passAlphabet = 'abcdefghikmnpqrstuvxyz23456789';
-		$passAlphabetLimit = strlen($passAlphabet)-1;
+		//$passAlphabet = 'abcdefghikmnpqrstuvxyz23456789';
+		//$passAlphabetLimit = strlen($passAlphabet)-1;
 		$pass = '';
 		$uid = '';
+		//Password generation
 		for ($j = 0; $j < $passLength; ++$j) {
 			$pass .= $passAlphabet[mt_rand(0, $passAlphabetLimit)];
 		}
+		$pass = str_shuffle($pass);
+		//Username generation
 		for ($j = 0; $j < $passLength; ++$j) {
 			$uid .= $passAlphabet[mt_rand(0, $passAlphabetLimit)];
 		}
+		//Adding prefix to username
 		$user_name = $user_prefix.$uid;
+		
+		//username & password same or different
 		if ($same_pass == 2) {	$pass_word = $pass; } else { $pass_word = $user_name; }
+		
 		$util->setMenu('/ip hotspot user');
 		$iv = count($util);
 		
-
 		if (intval($limit_bytes) != 0) {
 			$limit_bytes_total = (intval($limit_bytes) * 1024 * 1024 * 1024 );
 			$util->add(

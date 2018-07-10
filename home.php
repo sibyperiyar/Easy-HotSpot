@@ -229,13 +229,13 @@
 										<div class="form-horizontal">
 											<div class="form-group form-group-sm">
 												<div class="col-sm-4">
-													<label class="col-sm-6 control-label" for="no_of_users">Users</label>
+													<label class="col-sm-6 control-label" for="no_of_users">How many Users</label>
 													<div class="col-sm-6">
 														<input type="number" min="2" max="150" id="no_of_users" name="no_of_users" value="2" autofocus >
 													</div>
 												</div>
 												<div class="col-sm-4">
-													<label class="col-sm-6 control-label" for="user_prefix">Name Prefix</label>
+													<label class="col-sm-6 control-label" for="user_prefix">User name Prefix</label>
 													<div class="col-sm-6">
 														<input type="text" id="user_prefix" name="user_prefix">
 													</div>
@@ -248,7 +248,7 @@
 												</div>
 											</div>	
 											<div class="form-group form-group-sm">
-												<div class="col-sm-4">						
+												<div class="col-sm-4">
 													<label class="col-sm-6 control-label" for="limit_uptime">Time Limit (Days)</label>
 													<div class="col-sm-6">
 														<select class="myCombo" id="limit_uptime" name="limit_uptime">
@@ -296,7 +296,21 @@
 															<option value="50">50 GB</option>
 														</select>
 													</div>
-												</div>											
+												</div>
+												<div class="col-sm-4">						
+													<label class="col-sm-6 control-label" for="pass_type">Password Type</label>
+													<div class="col-sm-6">
+														<select class="myCombo" id="pass_type" name="pass_type" required>
+															<option value="s">abcd</option>
+															<option value="c">ABCD</option>
+															<option value="sc">aBcD</option>
+															<option value="sn">abcd1234</option>
+															<option value="cn">ABCD1234</option>
+															<option value="scn">aBcD1234</option>
+															<option value="n">1234</option>															
+														</select>
+													</div>
+												</div>													
 												<div class="col-sm-2">
 													<div class="pull-right">
 														<button name="missuing" id="missuing" onClick="ajaxMultiple()" class="btn btn-success">&nbsp; Issue</button>
@@ -566,7 +580,7 @@
 								<?php
 								try
 									{
-									$printRequest = new RouterOS\Request('/ip/hotspot/user/print');
+									$printRequest = new RouterOS\Request('/ip hotspot user print');
 									$printRequest->setArgument('.proplist', '.id,server,name,profile,limit-uptime,limit-bytes-total,uptime,bytes-in,bytes-out');
 									$printRequest->setQuery(RouterOS\Query::where('.id', '*0', RouterOS\Query::OP_EQ) ->not()); 
 
@@ -865,6 +879,7 @@
 </body>
 <?php
 include('modal_change_pass.php');
-include('modal_get_user.php');
+include('modal_delete_guest.php');
 include('modal_get_profiles.php');
+include('modal_get_user.php');
 ?>

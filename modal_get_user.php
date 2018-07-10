@@ -66,7 +66,7 @@
 						echo '<button name="edit_user" id="edit_user" onChange="genClick();" onClick="edituser(this.form);" class="btn btn-success" data-dismiss="modal" tabindex="6"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Update</button>';
 						echo '<button name="delete_user" id="delete_user" onClick="deleteuser(this.form);" class="btn btn-danger" data-dismiss="modal" tabindex="7"><i class="fa fa-trash" aria-hidden="true"></i>Remove User</button>';
 						echo '<button name="reset_psd" id="reset_psd" onClick="resetpass(this.form);" class="btn btn-info" data-dismiss="modal" tabindex="8"><i class="fa fa-bolt" aria-hidden="true"></i>Reset Pass</button>';
-						echo '<button name="close_btn" id="close_btn" class="btn btn-warning" data-dismiss="modal" aria-hidden="true" tabindex="9"><i class="fa fa-times" aria-hidden="true"></i>Close</button>';
+						echo '<button name="close_button" id="close_button" class="btn btn-warning" data-dismiss="modal" aria-hidden="true" tabindex="9"><i class="fa fa-times" aria-hidden="true"></i>Close</button>';
 						?>
 					</div>
 				</div>

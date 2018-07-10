@@ -17,15 +17,15 @@ ini_set('display_errors', 1); ?>
 				<div class="panel-body">		
 					<form class="form-horizontal" id="loginform" action="" method="POST">
 						<div class="form-group form-group-sm">
-							<label class="col-sm-2 control-label" for="inputEmail">Username</label>
+							<label class="col-sm-2 control-label" for="txt_user_name">Username</label>
 							<div class="col-sm-8">
-								<input type="text" id="txt_username" name="username" placeholder="Registered Username" required class="form-control" autofocus>
+								<input type="text" id="txt_user_name" name="username" placeholder="Registered Username" required class="form-control" autofocus>
 							</div>
 						</div>
 						<div class="form-group form-group-sm">
-							<label class="col-sm-2 control-label" for="inputPassword">Password</label>
+							<label class="col-sm-2 control-label" for="txt_password">Password</label>
 							<div class="col-sm-8">
-								<input type="password" id="txt_password" name="password" placeholder="Password" placeholder="Password" required class="form-control">
+								<input type="password" id="password" name="password" placeholder="Password" placeholder="Password" required class="form-control">
 							</div>
 						</div>
 						<div class="form-group form-group-sm">
