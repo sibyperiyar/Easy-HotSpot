@@ -4,7 +4,7 @@
 include ('header.php');
 if ( !isset($_SESSION) ) session_start(); ?>
 <body>
-	<div class="container">
+	<div class="container" style="margin-top:50px;">
 		<div class="no_print">
 		<div class="row">
 			<div class="col-sm-12 col-md-12 thumbnail" style="box-shadow: 10px 10px 5px #888888;">
@@ -12,7 +12,7 @@ if ( !isset($_SESSION) ) session_start(); ?>
 					<div class="panel-heading"><h3 class="text-center">HotSpot User Voucher Printing</h3></div>
 					<div class="panel-body">
 						<form class="form-horizontal" method="post">
-							<div class="alert alert-info text-center"><strong>HotSpot User Voucher Printing</strong></div>
+							<div class="alert alert-info text-center"><strong>Printing of last set of vouchers</strong></div>
 							<div class="form-group">
 								<div class="col-xs-4">
 									<img src="images/shot1.png" width="240" height="100" class="center">

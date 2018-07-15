@@ -23,9 +23,11 @@ if ((!empty($username)) and (!empty($password)) and (!empty($profile))) {
 			array(
 				'name' => "$username",
 				'password' => "$password",
+				'disabled' => "no",
 				'limit-uptime' => "$limit_uptime",
 				'limit-bytes-total' => "$limit_bytes_total",
-				'profile' => "$profile"
+				'profile' => "$profile",
+				'comment' => "Zetozone",
 			)
 		);
 	}
@@ -35,8 +37,10 @@ if ((!empty($username)) and (!empty($password)) and (!empty($profile))) {
 			array(
 				'name' => "$username",
 				'password' => "$password",
+				'disabled' => "no",
 				'limit-uptime' => "$limit_uptime",
-				'profile' => "$profile"
+				'profile' => "$profile",
+				'comment' => "Zetozone",
 			)
 		);
 		$limit_bytes = 0; // For Adding it to Local database

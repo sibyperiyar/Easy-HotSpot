@@ -22,7 +22,7 @@
 					<div class="form-group">
 						<label class="control-label col-xs-2">Grace Period</label>
 						<div class="col-xs-3">
-							<input type="text" id="grace_period" title="Grace period allowed, if any" onChange="genClick();" tabindex="3">
+							<input type="text" id="grace_period" title="Grace period, if any in wdhms format" onChange="genClick();" tabindex="3">
 						</div>
 						<label class="control-label col-xs-2 pull-left">On Expiry</label>
 						<div class="col-xs-3 pull-left">
@@ -66,13 +66,22 @@
 								<option value="6M">6 Mbps</option>
 								<option value="7M">7 Mbps</option>
 								<option value="8M">8 Mbps</option>
+								<option value="10M">10 Mbps</option>
+								<option value="25M">25 Mbps</option>
+								<option value="50M">50 Mbps</option>
+								<option value="100M">100 Mbps</option>
+								<option value="500M">500 Mbps</option>
+								<option value="800M">800 Mbps</option>
+								<option value="1024M">1 Gbps</option>
+								<option value="10240M">10 Gbps</option>
+								<option value="20480M">20 Gbps</option>
+								<option value="102400M">100 Gbps</option>
 							</select>
 						</div>
 						<label class="control-label col-xs-2 pull-left">Rate limit - Upload(Tx)</label>
 						<div class="col-xs-3 pull-left">
 							<select class="myCombo" id="tx_rate_limit" title="Select the maximum Upload speed limit allowed for the profile from the list" onChange="genClick();" name="status" required tabindex="8">
 								<option></option>		
-								<option value="128k">128 Kbps</option>
 								<option value="256k">256 Kbps</option>
 								<option value="512k">512 Kbps</option>
 								<option value="1M">1 Mbps</option>
@@ -83,6 +92,16 @@
 								<option value="6M">6 Mbps</option>
 								<option value="7M">7 Mbps</option>
 								<option value="8M">8 Mbps</option>
+								<option value="10M">10 Mbps</option>
+								<option value="25M">25 Mbps</option>
+								<option value="50M">50 Mbps</option>
+								<option value="100M">100 Mbps</option>
+								<option value="500M">500 Mbps</option>
+								<option value="800M">800 Mbps</option>
+								<option value="1024M">1 Gbps</option>
+								<option value="10240M">10 Gbps</option>
+								<option value="20480M">20 Gbps</option>
+								<option value="102400M">100 Gbps</option>
 							</select>
 						</div>
 					</div>
@@ -94,7 +113,7 @@
 						</div>
 						<label class="control-label col-xs-2">Session Timeout</label>
 						<div class="col-xs-3 pull-left">
-							<input type="text" id="session_timeout" title="Session Timeout Value in the format 3d 00:00:00, Give 00:00:00 or none for No Limits" onChange="genClick();" tabindex="10">
+							<input type="text" id="session_timeout" title="Session Timeout Value in the format 3d 00:00:00, Give 00:00:00 or none for No Limits" onChange="genClick();" tabindex="10" >
 						</div>						
 					</div>
 					<div class="form-group">

@@ -24,10 +24,12 @@ if ($_SESSION['user_level'] == 1) {
 	$rate_limit = $rx_rate_limit.'/'.$tx_rate_limit;
 	if (empty($rx_rate_limit))  $rx_rate_limit = "256k";
 	if (empty($tx_rate_limit))  $tx_rate_limit = "128k";
-	if (empty($session_timeout))  $session_timeout = "1d 00:00:00";
 	if (empty($shared_users))  $shared_users = 1;
+/*	
+	if (empty($session_timeout))  $session_timeout = "1d 00:00:00";
 	if (empty($mac_cookie_timeout))  $mac_cookie_timeout = "1d 00:00:00";
 	if (empty($keepalive_timeout))  $keepalive_timeout = "00:02:00";
+*/
 	if ($price == "") {$price = "0";}
 	if($lock_user == Enable){$mac_bind = ';[:local mac $"mac-address"; /ip hotspot user set mac-address=$mac [find where name=$user]]';} else {$mac_bind = "";}
 
@@ -64,6 +66,7 @@ if ($_SESSION['user_level'] == 1) {
 		$setRequest = new RouterOS\Request('/ip/hotspot/user/profile/set');
 		$setRequest->setArgument('numbers', $id);
 		$setRequest->setArgument('rate-limit', $rate_limit);
+/*
 		if(strtolower($session_timeout) != 'none') { 
 			$setRequest->setArgument('session-timeout', $session_timeout);
 		}
@@ -71,10 +74,10 @@ if ($_SESSION['user_level'] == 1) {
 			{
 			$setRequest->setArgument('session-timeout', '00:00:00');
 		}
-		$setRequest->setArgument('shared-users', $shared_users);
 		$setRequest->setArgument('mac-cookie-timeout', $mac_cookie_timeout);
 		$setRequest->setArgument('keepalive-timeout', $keepalive_timeout);
-		
+*/
+		$setRequest->setArgument('shared-users', $shared_users);		
 		$setRequest->setArgument('status-autorefresh', "1m");
 		$setRequest->setArgument('transparent-proxy', "yes");
 		$setRequest->setArgument('on-login', "$login_script");

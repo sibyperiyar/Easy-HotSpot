@@ -21,11 +21,11 @@ use PEAR2\Net\RouterOS;
 require_once 'PEAR2/Autoload.php';
 require_once 'config.php';
 try {
-		$util = new RouterOS\Util($client = new RouterOS\Client("$host", "$user", "$pass"));
-		$printRequest = new RouterOS\Request('/ip/hotspot/user/print');
-		include_once('home.php');
-	}
-	catch (Exception $e) {
-		include_once('settings.php');
+	$util = new RouterOS\Util($client = new RouterOS\Client("$host", "$user", "$pass"));
+	include_once('home.php');
+}
+catch (Exception $e) {
+	echo "Error Accessing Data: " . $e->getMessage();
+	include_once('settings.php');
 }
 ?>

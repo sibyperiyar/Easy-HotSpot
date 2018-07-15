@@ -22,9 +22,11 @@ if ($_SESSION['user_level'] == 1) {
 	$lock_user = $_GET['lock_user'];
 
 	$rate_limit = $rx_rate_limit.'/'.$tx_rate_limit;
+	/*
 	if (empty($session_timeout)) $session_timeout = '3d 00:00:00';
 	if (empty($mac_cookie_timeout)) $mac_cookie_timeout = '3d 00:00:00';
-	if (empty($keepalive_timeout)) $keepalive_timeout = '00:02:00';
+	if (empty($keepalive_timeout)) $keepalive_timeout = '00:02:00'; 
+	*/
 	if ($price == "") {$price = "0";}
 	if($lock_user == Enable){$mac_bind = ';[:local mac $"mac-address"; /ip hotspot user set mac-address=$mac [find where name=$user]]';} else {$mac_bind = "";}
 
@@ -59,6 +61,16 @@ if ($_SESSION['user_level'] == 1) {
 				array(
 					'name' => "$profile_name",
 					'rate-limit' => "$rate_limit",
+					'shared-users' => "$shared_users",
+					'status-autorefresh' => "1m",
+					'transparent-proxy' => "yes",
+					'on-login' => "$login_script",
+				)
+			);
+			/* Old version
+			array(
+					'name' => "$profile_name",
+					'rate-limit' => "$rate_limit",
 					'session-timeout' => "$session_timeout",
 					'shared-users' => "$shared_users",
 					'mac-cookie-timeout' => "$mac_cookie_timeout",
@@ -67,7 +79,7 @@ if ($_SESSION['user_level'] == 1) {
 					'transparent-proxy' => "yes",
 					'on-login' => "$login_script",
 				)
-			);
+			*/	
 			/*
 			if(strtolower($session_timeout) == 'none') {
 				$id = $client->sendSync(new Request('/ip/hotspot/user/profile/print .proplist=.id', null, Query::where('name', $profile_name)))->getArgument('.id');

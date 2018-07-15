@@ -918,7 +918,7 @@ function editprofile(oForm) {
 //Guest User Profile - End of Updating a User profile;
 </script>
 <script>
-//Guest User Profile - Start of Adding a New User profile;
+//Guest User Account - Start of Removing Selected User accounts
 function removeSelected(oForm) { 
 	var Removal1 = oForm.elements['removal_list[]'];
 	var Removal_list = new Array();

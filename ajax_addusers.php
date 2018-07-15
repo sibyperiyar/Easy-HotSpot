@@ -21,9 +21,11 @@ if ( !isset($_SESSION) ) session_start();
 switch ($pass_type) {
 	case "s":
 		$passAlphabet = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz";
+		$user_prefix = strtolower($user_prefix);
 		break;
 	case "c":
 		$passAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		$user_prefix = strtoupper($user_prefix);
 		break;
 	case "n":
 		$passAlphabet = "123456789123456789123456789123456789123456789123456789";
@@ -33,9 +35,11 @@ switch ($pass_type) {
 		break;
 	case "sn":
 		$passAlphabet = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz123456789123456789123456789";
+		$user_prefix = strtolower($user_prefix);
 		break;
 	case "cn":
 		$passAlphabet = "123456789123456789123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789123456789123456789";
+		$user_prefix = strtoupper($user_prefix);
 		break;
 	case "scn":
 		$passAlphabet = "abcdefghijklmnopqrstuvwxyz123456789123456789123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
@@ -88,11 +92,13 @@ if($_SESSION['user_level'] >= 1 and $_SESSION['user_level'] <= 3) {
 			$limit_bytes_total = (intval($limit_bytes) * 1024 * 1024 * 1024 );
 			$util->add(
 				array(
-					'name' => "$user_name",
-					'password' => "$pass_word",
+					'name' => "$username",
+					'password' => "$password",
+					'disabled' => "no",
 					'limit-uptime' => "$limit_uptime",
 					'limit-bytes-total' => "$limit_bytes_total",
-					'profile' => "$profile"
+					'profile' => "$profile",
+					'comment' => "Zetozone",
 				)
 			);
 		}
@@ -100,10 +106,12 @@ if($_SESSION['user_level'] >= 1 and $_SESSION['user_level'] <= 3) {
 			{
 			$util->add(
 				array(
-					'name' => "$user_name",
-					'password' => "$pass_word",
+					'name' => "$username",
+					'password' => "$password",
+					'disabled' => "no",
 					'limit-uptime' => "$limit_uptime",
-					'profile' => "$profile"
+					'profile' => "$profile",
+					'comment' => "Zetozone",
 				)
 			);
 			$limit_bytes = 0; // For Adding it to Local database

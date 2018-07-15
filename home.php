@@ -136,41 +136,43 @@
 												<div class="col-sm-4">
 													<label class="col-sm-6 control-label" >User Name</label>
 													<div class="col-sm-6">
-														<input type="text" placeholder="Please enter required username *" name="uname" id="uname" required >
+														<input type="text" placeholder="Required Username *" name="uname" id="uname" required >
 													</div>
 												</div>
 												<div class="col-sm-4">
 													<label class="col-sm-6 control-label" >Password</label>
 													<div class="col-sm-6">
-														<input type="text" placeholder="Please enter the required password *" name="psw" id="psw" required>
+														<input type="text" placeholder="required password *" name="psw" id="psw" required>
 													</div>
 												</div>
 												<div class="col-sm-4">						
-													<label class="col-sm-6 control-label" >Time Limit (Days)</label>
+													<label class="col-sm-6 control-label" >Uptime Limit(wdhms format)</label>
 													<div class="col-sm-6">
-														<select class="myCombo" id="slimit_uptime" name="slimit_uptime">
+														<input type="text" placeholder="10m" title="eg.5h30m [w(Weeks) d(days) h(hours) m(minutes) s(seconds) format]" name="slimit_uptime" id="slimit_uptime" >
+													<!--	<select class="myCombo" id="slimit_uptime" name="slimit_uptime">
 															<option value="2d">2 Days</option>									
 															<option value="1d">1 Day</option>
 															<option value="2d">2 Days</option>
 															<option value="3d">3 Days</option>
 															<option value="4d">4 Days</option>
 															<option value="5d">5 Days</option>
-														</select>
+														</select> -->
 													</div>
 												</div>
 											</div>	
 											<div class="form-group form-group-sm">
 												<div class="col-sm-4">						
-													<label class="col-sm-6 control-label" for="limit_bytes">Maximum Usage Limit(GB)</label>
+													<label class="col-sm-6 control-label" for="slimit_bytes">Maximum Usage Limit(GB), 0 for NO Limit</label>
 													<div class="col-sm-6">
-														<select class="myCombo" id="slimit_bytes" name="slimit_bytes">
+														<input type="number" title="Maximum usable data in GB" name="slimit_bytes" id="slimit_bytes" min="0" value="0" required >
+														<!--<select class="myCombo" id="slimit_bytes" name="slimit_bytes">
 															<option value="0">NONE</option>									
 															<option value="1">1 GB</option>
 															<option value="5">5 GB</option>
 															<option value="10">10 GB</option>
 															<option value="20">20 GB</option>
 															<option value="50">50 GB</option>
-														</select>
+														</select> -->
 													</div>
 												</div>
 												<div class="col-sm-4">						
@@ -249,8 +251,10 @@
 											</div>	
 											<div class="form-group form-group-sm">
 												<div class="col-sm-4">
-													<label class="col-sm-6 control-label" for="limit_uptime">Time Limit (Days)</label>
+													<label class="col-sm-6 control-label" for="limit_uptime">Uptime Limit(wdhms format)</label>
 													<div class="col-sm-6">
+														<input type="text" placeholder="1d1h" title="eg.5h30m [w(Weeks) d(days) h(hours) m(minutes) s(seconds) format]" name="limit_uptime" id="limit_uptime" >
+														<!--<input type="number" placeholder="No of days" name="limit_uptime" id="limit_uptime" min="1" value="2" required >
 														<select class="myCombo" id="limit_uptime" name="limit_uptime">
 															<option value="2d">2 Days</option>									
 															<option value="1d">1 Day</option>
@@ -258,7 +262,7 @@
 															<option value="3d">3 Days</option>
 															<option value="4d">4 Days</option>
 															<option value="5d">5 Days</option>
-														</select>
+														</select> -->
 													</div>
 												</div>
 												<div class="col-sm-4">						
@@ -284,8 +288,12 @@
 												</div>
 											</div>	
 											<div class="form-group form-group-sm">
-												<div class="col-sm-4">						
-													<label class="col-sm-6 control-label" for="limit_bytes">Maximum Usage Limit(GB)</label>
+												<div class="col-sm-4">
+												<label class="col-sm-6 control-label" for="limit_bytes">Maximum Usage Limit(GB), 0 for NO Limit</label>
+													<div class="col-sm-6">
+														<input type="number" placeholder="Maximum usable data in GB" name="limit_bytes" id="limit_bytes" min="0" value="0" required >
+													</div>
+													<!--<label class="col-sm-6 control-label" for="limit_bytes">Maximum Usage Limit(GB)</label>
 													<div class="col-sm-6">
 														<select class="myCombo" id="limit_bytes" name="limit_bytes">
 															<option value="0">NONE</option>									
@@ -295,18 +303,18 @@
 															<option value="20">20 GB</option>
 															<option value="50">50 GB</option>
 														</select>
-													</div>
+													</div> -->
 												</div>
 												<div class="col-sm-4">						
 													<label class="col-sm-6 control-label" for="pass_type">Password Type</label>
 													<div class="col-sm-6">
-														<select class="myCombo" id="pass_type" name="pass_type" required>
-															<option value="s">abcd</option>
-															<option value="c">ABCD</option>
-															<option value="sc">aBcD</option>
+														<select class="myCombo" id="pass_type" name="pass_type" value="sn" required>
 															<option value="sn">abcd1234</option>
-															<option value="cn">ABCD1234</option>
-															<option value="scn">aBcD1234</option>
+															<option value="s">abcd</option>
+															<option value="c">DCBA</option>
+															<option value="sc">BaCd</option>
+															<option value="cn">1342ABCD</option>
+															<option value="scn">1423aBcD</option>
 															<option value="n">1234</option>															
 														</select>
 													</div>
@@ -352,7 +360,7 @@
 						<?php $util->setMenu('/ip hotspot user'); ?>
 						<table cellpadding="0" cellspacing="0" border="0" class="table  table-bordered" id="table-01">
 							<div class="alert alert-info">
-								<strong><i class="icon-user icon-large"></i><h3 class="text-center">Users inactive at the moment</h3></strong>
+								<strong><i class="icon-user icon-large"></i><h3 class="text-center">Users Not active at the moment</h3></strong>
 							</div>
 							<thead>
 								<tr>
@@ -380,17 +388,19 @@
 										$limit_uptime = $item->getProperty('limit-uptime');
 									}
 									else { $limit_uptime = 'Not Limited'; }
-									echo '<tr>';
-										echo '<td>'.$i.'</td>';
-										echo '<td>', $item->getProperty('name'),'</td>';
-										echo '<td>', $item->getProperty('profile'), '</td>';
-										echo '<td>', $item->getProperty('bytes-in'), '</td>';
-										echo '<td>', $item->getProperty('bytes-out'), '</td>';
-										echo '<td>', $limit_bytes_total, '</td>';
-										echo '<td>', $item->getProperty('uptime'), '</td>';
-										echo '<td>', $limit_uptime, '</td>';
-									echo '</tr>';
-								} ?>
+									if ($item->getProperty('uptime') == "0s") {
+										echo '<tr>';
+											echo '<td>'.$i.'</td>';
+											echo '<td>', $item->getProperty('name'),'</td>';
+											echo '<td>', $item->getProperty('profile'), '</td>';
+											echo '<td>', $item->getProperty('bytes-in'), '</td>';
+											echo '<td>', $item->getProperty('bytes-out'), '</td>';
+											echo '<td>', $limit_bytes_total, '</td>';
+											echo '<td>', $item->getProperty('uptime'), '</td>';
+											echo '<td>', $limit_uptime, '</td>';
+										echo '</tr>';
+									}
+								}?>
 							</tbody>
 						</table>
                     </div>
@@ -477,7 +487,7 @@
 								<?php $util->setMenu('/ip hotspot user'); ?>
 								<table cellpadding="0" cellspacing="0" border="0" class="table  table-bordered" id="table-01">
 									<div class="alert alert-info">
-										<strong><i class="icon-user icon-large"></i><h3 class="text-center">List of users accounts which can be removed and not active at the moment</h3></strong>
+										<strong><i class="icon-user icon-large"></i><h3 class="text-center">List of users accounts</h3></strong>
 									</div>
 									<thead>
 										<tr>
@@ -520,8 +530,15 @@
 											echo '<td>', $limit_uptime, '</td>';
 											if($_SESSION['user_level'] <= 2) { //Administrator/Unit Head Only
 												echo '<td>';
+												$chktrue = "";
+												if (!empty($item->getProperty('limit-uptime'))) {
+													if (!($item->getProperty('uptime') < $item->getProperty('limit-uptime'))) {
+														$chktrue = "checked";
+													}
+												}
+												//if (!($item->getProperty('uptime') < $item->getProperty('limit-uptime'))) $chktrue = "checked"; else $chktrue = "";
 												echo '<label for="'.$rid.'"></label>
-													<input type="checkbox" name="removal_list[]" value="'.$rid.'" id="'.$rid.'" class="styled" />';
+													<input type="checkbox" name="removal_list[]" value="'.$rid.'" id="'.$rid.'" '.$chktrue.' class="styled" /> &nbsp;&nbsp;&nbsp; ';
 													echo '<a title="Delete the Guest User Account" id="id'.$i.'"  href="#delete'.$item->getProperty('name').'" data-toggle="modal"  class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>&nbsp;&nbsp;';
 													include('modal_delete_guest.php'); ?>
 													<?php
@@ -531,6 +548,10 @@
 										} ?>
 									</tbody>
 								</table>
+								<!--<div class="col-sm-2 col-sm-offset-3">
+									<button name="removal" id="removeall" data-dismiss="modal" onClick="removeAllSelected(this.form);" class="btn btn-danger"><i class="icon-save icon-large"></i></a>&nbsp;Remove All</button>&nbsp;&nbsp;&nbsp;
+								</div>
+								<div class="col-sm-2"> -->
 								<div class="col-sm-2 col-sm-offset-4">
 									<button name="removal" id="removal" data-dismiss="modal" onClick="removeSelected(this.form);" class="btn btn-success"><i class="icon-save icon-large"></i></a>&nbsp;Remove Selected</button>&nbsp;&nbsp;&nbsp;
 								</div>	
@@ -580,9 +601,14 @@
 								<?php
 								try
 									{
+									//use PEAR2\Net\RouterOS;
+									require_once 'PEAR2/Autoload.php';
+									require_once 'config.php';
+									$util = new RouterOS\Util($client = new RouterOS\Client("$host", "$user", "$pass"));
+									//$client = new RouterOS\Client("$host", "$user", "$pass");
 									$printRequest = new RouterOS\Request('/ip hotspot user print');
-									$printRequest->setArgument('.proplist', '.id,server,name,profile,limit-uptime,limit-bytes-total,uptime,bytes-in,bytes-out');
-									$printRequest->setQuery(RouterOS\Query::where('.id', '*0', RouterOS\Query::OP_EQ) ->not()); 
+									$printRequest->setArgument('.proplist','.id,server,name,profile,limit-uptime,limit-bytes-total,uptime,bytes-in,bytes-out');
+									$printRequest->setQuery(RouterOS\Query::where('.id','*0', RouterOS\Query::OP_EQ) ->not()); 
 
 									$idList = '';
 									$i = 0;
@@ -606,7 +632,7 @@
 									}
 								}
 								catch (Exception $e) {
-									//echo '<script>cmodal("Access Denied!", "Error accessing validity expired users!", "error", "index.php")</script>';
+									echo '<script>cmodal("Access Denied!", "Error accessing validity expired users!'.$e->getMessage().'", "error", "index.php")</script>';
 								}
 								?>
 							</tbody>
@@ -767,7 +793,7 @@
 						<?php $util->setMenu('/ip hotspot user'); ?>
 						<table cellpadding="0" cellspacing="0" border="0" class="table  table-bordered" id="table-01">
 							<div class="alert alert-info">
-								<strong><i class="icon-user icon-large"></i><h3 class="text-center">User accounts not yet initiated any activities, and can be removed</h3></strong>
+								<strong><i class="icon-user icon-large"></i><h3 class="text-center">User accounts not yet initiated any activities, ie. accounts inactive at the moment</h3></strong>
 							</div>
 							<thead>
 								<tr>
