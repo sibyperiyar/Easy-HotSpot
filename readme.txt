@@ -1,6 +1,11 @@
+There is an updated version of this project at:
+https://github.com/sonalsiby/EasyHotspot
+Please check that out as well.
+
+-----------------------------------------------------
 Components/Packages/Scripts used in this project
 -------------------------------------------------
-Elevator – Metro UI Inspired Free Bootstrap HTML5 Template by graygrids.com
+Elevator â€“ Metro UI Inspired Free Bootstrap HTML5 Template by graygrids.com
 https://graygrids.com/item/elevator-metro-ui-inspired-responsive-bootstrap-template/
 
 Twitter Bootstrap (& Jquery) http://getbootstrap.com/, https://jquery.com/
@@ -54,6 +59,7 @@ Management of System user Accounts by Admin: Creation, Listing, Activation/Deact
 Hotspot User Profiles Management:  Creation/Updation/Deletion of User profiles in the router. Options like Session Timeout, MAC binding of Account, Expiry mode, grace period, price, MAC Cookie Timeout, Keepalive Timeout, Download and Upload Speed Limits, Number of simultaneous user logins allowed per user account etc can be set for each profile.
 Re-printing of Last Voucher/Vouchers List.
 and many more...
+
 Please visit http://hotspot.zetozone.com for a detailed visual documentation of the project.
 -------------------------------------------------
 How to Install in different OS based PCs
